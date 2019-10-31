@@ -1,2 +1,7 @@
-# personalproject
-My personal passion project for development.
+# Personal Passion Project
+
+## Concept
+I don't know yet;;
+
+## Tech
+Still a mystery;;;
