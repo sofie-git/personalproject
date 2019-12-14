@@ -53,7 +53,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _sceneGuid: 
   _serializerGuid: 7bb96704-f239-403f-a3b8-c6b189ebb5a7
-  _prefabId: 2
+  _prefabId: 3
   _updateRate: 1
   _autoFreezeProxyFrames: 0
   _clientPredicted: 1
@@ -136,6 +136,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c569358a3a3df4e91a0c4d76c6a9bbce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ballon: {fileID: 0}
 --- !u!1 &8164270584930619773
 GameObject:
   m_ObjectHideFlags: 0

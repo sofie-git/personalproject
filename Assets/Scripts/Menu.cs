@@ -6,24 +6,10 @@ using UnityEngine;
 
 public class Menu : Bolt.GlobalEventListener
 {
-    // void OnGUI()
-    // {
-    //     GUILayout.BeginArea(new Rect(10, 10, Screen.width - 20, Screen.height - 20));
+    public GameObject HostButton;
+    public GameObject JoinButton;
+    public GameObject LaunchButton;
 
-    //     if (GUILayout.Button("Start Server", GUILayout.ExpandWidth(true), GUILayout.ExpandHeight(true)))
-    //     {
-    //         // START SERVER
-    //         BoltLauncher.StartServer();
-    //     }
-
-    //     if (GUILayout.Button("Start Client", GUILayout.ExpandWidth(true), GUILayout.ExpandHeight(true)))
-    //     {
-    //         // START CLIENT
-    //         BoltLauncher.StartClient();
-    //     }
-
-    //     GUILayout.EndArea();
-    // }
     public void StartServer()
     {
         BoltLauncher.StartServer();
@@ -34,6 +20,13 @@ public class Menu : Bolt.GlobalEventListener
         BoltLauncher.StartClient();
     }
 
+    public void changeCanvas()
+    {
+        HostButton.SetActive(false);
+        JoinButton.SetActive(false);
+        LaunchButton.SetActive(true);
+    }
+
     public override void BoltStartDone()
     {
         if (BoltNetwork.IsServer)
@@ -42,8 +35,6 @@ public class Menu : Bolt.GlobalEventListener
 
             BoltNetwork.SetServerInfo(matchName, null);
             BoltNetwork.LoadScene("MainScene");
-
-
         }
     }
 

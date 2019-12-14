@@ -14,6 +14,7 @@ public class GetBalloonInfo : MonoBehaviour
     {
         //ballon = this.gameObject.transform.GetChild(0).gameObject;
         Debug.Log("I clicked the balloon");
+        Debug.Log("The color is: " + ballon.GetComponent<Renderer>().material.color);
         ballon.GetComponent<Renderer>().material.color = Color.blue;
     }
 

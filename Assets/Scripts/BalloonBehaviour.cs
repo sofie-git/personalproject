@@ -4,19 +4,24 @@ using UnityEngine;
 
 public class BalloonBehaviour : Bolt.EntityBehaviour<IBalloonState>
 {
+
+    public GameObject ballon;
+
+    void Awake()
+    {
+        ballon = GameObject.Find("/balloon/ballon");
+    }
     public override void Attached()
     {
-        Debug.Log("Ik zit in de Attached");
-        //state.PlayerTransform.SetTransforms(transform);
+
         state.SetTransforms(state.BalloonTransform, transform);
+
+        state.BalloonColor = new Color(Random.value, Random.value, Random.value);
+        state.AddCallback("BalloonColor", ColorChanged);
     }
 
     public override void SimulateOwner()
     {
-        if (Input.GetKey(KeyCode.Space))
-        {
-            Debug.Log("Pressed the spacebar in the balloon script");
-        }
 
         var speed = 4f;
         var movement = Vector3.zero;
@@ -30,6 +35,11 @@ public class BalloonBehaviour : Bolt.EntityBehaviour<IBalloonState>
         {
             transform.position = transform.position + (movement.normalized * speed * BoltNetwork.FrameDeltaTime);
         }
+    }
+
+    void ColorChanged()
+    {
+        ballon.GetComponent<Renderer>().material.color = state.BalloonColor;
     }
 
 }
