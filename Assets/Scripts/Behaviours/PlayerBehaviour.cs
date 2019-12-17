@@ -4,8 +4,17 @@ using UnityEngine;
 
 public class PlayerBehaviour : Bolt.EntityBehaviour<IPlayerState>
 {
+    public Camera cam = null;
+    public GameObject infoCanvas;
+
     public override void Attached()
     {
+        if (entity.IsOwner)
+        {
+            cam.enabled = true;
+            cam.gameObject.SetActive(true);
+            //infoCanvas.GetComponent<Canvas>().renderCamera = 
+        }
         //state.PlayerTransform.SetTransforms(transform);
         state.SetTransforms(state.PlayerTransform, transform);
     }

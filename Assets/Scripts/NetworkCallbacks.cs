@@ -7,15 +7,16 @@ public class NetworkCallbacks : Bolt.GlobalEventListener
 {
     public override void SceneLoadLocalDone(string map)
     {
-        // randomize a position
-        //var spawnPositionServer = new Vector3(Random.Range(-8, 8), 2, Random.Range(-8, 8));
-        var spawnPosition = new Vector3(Random.Range(-10, 10), 9, Random.Range(-10, 10));
 
+        if (BoltNetwork.IsServer) {
+            // var spawnPosition = new Vector3(Random.Range(-10, 10), 1, Random.Range(-10, 10));
+            var spawnPosition = new Vector3(0, 1, 0);
+            BoltNetwork.Instantiate(BoltPrefabs.Player, spawnPosition, Quaternion.identity);
 
-        //Debug.Log(Camera.allCameras.Length);
-        BoltNetwork.Instantiate(BoltPrefabs.Balloonpilot, spawnPosition, Quaternion.identity);
-
-
+        } else if (BoltNetwork.IsClient) {
+            var spawnPosition = new Vector3(Random.Range(-10, 10), 9, Random.Range(-10, 10));
+            BoltNetwork.Instantiate(BoltPrefabs.Balloonpilot, spawnPosition, Quaternion.identity);
+        }
 
     }
 }

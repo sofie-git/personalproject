@@ -8,15 +8,26 @@ public class Menu : Bolt.GlobalEventListener
 {
     public GameObject HostButton;
     public GameObject JoinButton;
+    public GameObject LoadingServer;
+    public GameObject LoadingClient;
     public GameObject LaunchButton;
+
+    public GameObject KleurOranje;
+    public GameObject KleurRoze;
+    public GameObject KleurBlauw;
+    public GameObject KleurRandom;
+    public GameObject colorPreview;
+    public GameObject colorText;
 
     public void StartServer()
     {
+        LoadingServer.gameObject.SetActive(true);
         BoltLauncher.StartServer();
     }
 
     public void StartClient()
     {
+        LoadingClient.gameObject.SetActive(true);
         BoltLauncher.StartClient();
     }
 
@@ -25,6 +36,12 @@ public class Menu : Bolt.GlobalEventListener
         HostButton.SetActive(false);
         JoinButton.SetActive(false);
         LaunchButton.SetActive(true);
+        KleurOranje.SetActive(true);
+        KleurRoze.SetActive(true);
+        KleurBlauw.SetActive(true);
+        KleurRandom.SetActive(true);
+        colorPreview.SetActive(true);
+        colorText.SetActive(true);
     }
 
     public override void BoltStartDone()

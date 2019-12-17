@@ -53,7 +53,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _sceneGuid: 
   _serializerGuid: 7bb96704-f239-403f-a3b8-c6b189ebb5a7
-  _prefabId: 3
+  _prefabId: 4
   _updateRate: 1
   _autoFreezeProxyFrames: 0
   _clientPredicted: 1
@@ -124,6 +124,7 @@ MonoBehaviour:
   ballon: {fileID: 8164270585772923415}
   infoCanvas: {fileID: 7059132726825739462, guid: 5f92961b03b464129813be763c2f0b89,
     type: 3}
+  colorBlock: {fileID: 0}
 --- !u!114 &-2749565416541590800
 MonoBehaviour:
   m_ObjectHideFlags: 0

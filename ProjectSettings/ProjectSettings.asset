@@ -12,7 +12,7 @@ PlayerSettings:
   targetDevice: 2
   useOnDemandResources: 0
   accelerometerFrequency: 60
-  companyName: DefaultCompany
+  companyName: Sofie Patoor
   productName: Cardboard VR
   defaultCursor: {fileID: 0}
   cursorHotspot: {x: 0, y: 0}
@@ -162,7 +162,7 @@ PlayerSettings:
   androidSupportedAspectRatio: 1
   androidMaxAspectRatio: 2.1
   applicationIdentifier:
-    Android: com.SofiePatoor.CappadociaVR
+    Android: com.SofiePatoor.CappadociaVR2
     Standalone: com.SofiePatoor.CardboardVR
   buildNumber: {}
   AndroidBundleVersionCode: 1
